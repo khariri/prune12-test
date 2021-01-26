@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="djbc_docs_form" model="ir.ui.view">
+		<field name="name">DJBC Docs Send DO Form</field>
+		<field name="model">djbc.docs</field>
+		<field name="inherit_id" ref="djbc.djbc_docs_form"/>
+		<field name="arch" type="xml">
+			<field name="state" position="before">
+				<button string="Send DO" type="action"  name="%(send_do_wizard_action)d"
+						groups="djbc.group_djbc_send_do" states="paid_do" class="btn-primary"/>
+			</field>
+		</field>
+	</record>
+
+
+</odoo>

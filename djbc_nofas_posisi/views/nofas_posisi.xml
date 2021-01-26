@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="nofas_posisi_tree" model="ir.ui.view">
+		<field name="name">Laporan Posisi Tree</field>
+		<field name="model">djbc.nofas_posisi</field>
+		<field name="arch" type="xml">
+			<tree string="Laporan Pemasukan" create="0" edit="0">
+				<field name="no_urut"/>
+				<field name="jenis_dok_masuk"/>
+				<field name="no_aju_masuk" invisible="1"/>
+				<field name="tgl_aju_masuk" invisible="1"/>
+				<field name="no_dok_masuk"/>
+				<field name="tgl_dok_masuk"/>
+				<field name="no_penerimaan" invisible="0"/>
+				<field name="tgl_penerimaan" invisible="0"/>
+				<field name="no_bl" invisible= "1"/>
+				<field name="tgl_bl" invisible="1"/>
+				<field name="no_cont" invisible= "1"/>
+				<field name="pengirim"/>
+				<field name="pemilik" invisible= "0"/>
+				<field name="hs_code" invisible= "1" />
+				<field name="kode_barang"/>
+				<field name="nama_barang"/>
+				<field name="lot_id" invisible="1" />
+				<field name="jumlah_pemasukan"/>
+				<field name="satuan_pemasukan"/>
+				<field name="nilai_masuk"/>
+				<field name="currency_masuk"/>
+				<field name="jumlah_kemasan_masuk" invisible="1"/>
+				<field name="satuan_kemasan_masuk" invisible="1"/>
+				<field name="jenis_dok_keluar"/>
+				<field name="no_aju_keluar" invisible="1"/>
+				<field name="tgl_aju_keluar" invisible="1"/>
+				<field name="no_dok_keluar"/>
+				<field name="tgl_dok_keluar"/>
+				<field name="no_pengeluaran" invisible="0"/>
+				<field name="tgl_pengeluaran" invisible="0" />
+				<field name="penerima" invisible="0"/>
+				<field name="jumlah_pengeluaran" invisible="0"/>
+				<field name="satuan_pengeluaran"/>
+				<field name="nilai_keluar"/>
+				<field name="currency_keluar"/>
+				<field name="jumlah_kemasan_keluar" invisible="1"/>
+				<field name="satuan_kemasan_keluar" invisible="1"/>
+				<field name="tgl_so" invisible="1"/>
+				<field name="jumlah_satuan" invisible="1"/>
+				<field name="jumlah_kemasan" invisible="1"/>
+				<field name="selisih_satuan" invisible="1"/>
+				<field name="selisih_kemasan" invisible="1" />
+				<field name="sisa_satuan" invisible="0"/>
+				<field name="sisa_kemasan" invisible="1"/>
+				<field name="location" invisible="1"/>
+				<field name="warehouse"/>
+				<field name="alm_wh" invisible="1"/>
+				<field name="kota_wh" invisible="1"/>
+				
+			</tree>
+		</field>
+	</record> 
+
+
+
+	<record id="nofas_posisi_form" model="ir.ui.view">
+		<field name="name">Laporan Posisi Form</field>
+		<field name="model">djbc.nofas_posisi</field>
+		<field name="arch" type="xml">
+			<form create="0" edit="0">
+				<group>
+					<group>
+						<field name="no_urut"/>
+						<field name="jenis_dok_masuk"/>
+						<field name="no_aju_masuk" invisible="0"/>
+						<field name="tgl_aju_masuk" invisible="0"/>
+						<field name="no_dok_masuk"/>
+						<field name="tgl_dok_masuk"/>
+						<field name="no_penerimaan"/>
+						<field name="tgl_penerimaan"/>
+						<field name="no_bl" invisible= "0"/>
+						<field name="tgl_bl" invisible="0"/>
+						<field name="no_cont" invisible= "0"/>
+						<field name="pengirim"/>
+						<field name="pemilik" invisible= "0"/>
+						<field name="hs_code" invisible= "0" />
+						<field name="kode_barang"/>
+						<field name="nama_barang"/>
+						<field name="lot_id" invisible="0" />
+						<field name="jumlah_pemasukan"/>
+						<field name="satuan_pemasukan"/>
+						<field name="nilai_masuk"/>
+						<field name="currency_masuk"/>
+						<field name="jumlah_kemasan_masuk" invisible="0"/>
+						<field name="satuan_kemasan_masuk" invisible="0"/>
+						<field name="location" invisible="0"/>
+						<field name="warehouse"/>
+						<field name="alm_wh" invisible="0"/>
+						<field name="kota_wh" invisible="0"/>
+						
+						
+					</group>
+					<group>
+						<field name="jenis_dok_keluar"/>
+						<field name="no_aju_keluar" invisible="0"/>
+						<field name="tgl_aju_keluar" invisible="0"/>
+						<field name="no_dok_keluar"/>
+						<field name="tgl_dok_keluar"/>
+						<field name="no_pengeluaran"/>
+						<field name="tgl_pengeluaran"/>
+						<field name="penerima" invisible="0"/>
+						<field name="jumlah_pengeluaran" invisible="0"/>
+						<field name="satuan_pengeluaran"/>
+						<field name="nilai_keluar"/>
+						<field name="currency_keluar"/>
+						<field name="jumlah_kemasan_keluar"/>
+						<field name="satuan_kemasan_keluar"/>
+						<field name="tgl_so"/>
+						<field name="jumlah_satuan"/>
+						<field name="jumlah_kemasan" invisible="0"/>
+						<field name="selisih_satuan" invisible="0"/>
+						<field name="selisih_kemasan"/>
+						<field name="sisa_satuan"/>
+						<field name="sisa_kemasan"/>
+
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+
+	<!--record id="nofas_masuk_action_server" model="ir.actions.server">
+		<field name="name">Laporan Pemasukan</field>
+		<field name="condition">True</field>
+		<field name="type">ir.actions.server</field>
+		<field name="model_id" ref="djbc_nofas_masuk.model_djbc_nofas_masuk"/>
+		<field name="state">code</field>
+		<field name="code">action = model.call_djbc_nofas_masuk()</field>
+	</record-->
+
+
+	<record id="nofas_posisi_action" model="ir.actions.act_window">
+		<field name="name">Laporan Posisi Barang</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">djbc.nofas_posisi</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!--record id="mutasi_action" model="ir.actions.act_window">
+		<field name="name">Laporan Mutasi</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">djbc.mutasi</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+   		<field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				It's Empty
+			</p>
+		</field>
+	</record-->
+</odoo>

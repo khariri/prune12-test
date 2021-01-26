@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="djbc_docs_tree" model="ir.ui.view">
+		<field name="name">DJBC Docs Tree</field>
+		<field name="model">djbc.docs</field>
+		<field name="arch" type="xml">
+			<tree string="Dokumen BC">
+				<field name="no_dok"/>
+				<field name="tgl_dok"/>
+				<field name="jenis_dok"/>
+				<field name="no_aju" invisible="1"/>
+				<field name="tgl_aju" invisible="1"/>
+				<field name="no_bl" invisible="1"/>
+				<field name="tgl_bl" invisible="1"/>
+				<field name="no_cont" invisible="1"/>
+				<field name="nm_cargoowner"/>
+				<field name="forwarder_name" />
+				<field name="shipping_name"/>
+				<field name="terminal"/>
+				<field name="create_uid"/>
+			</tree>
+		</field>
+	</record> 
+
+	<record id="djbc_docs_form" model="ir.ui.view">
+		<field name="name">DJBC Docs Form</field>
+		<field name="model">djbc.docs</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+					<!--button string="Send SP2" type="object" name="send_sp2" states="new" class="oe_highlight"/-->
+					
+					<field name="state" widget="statusbar" groups="djbc.group_djbc_nle"/>
+				</header>
+			    <group>
+			    	<group>
+			      	    <field name="jenis_dok" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="kd_document_type" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+			      	    <field name="no_dok" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="tgl_dok" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+			      	    <field name="no_aju" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="tgl_aju" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+			      	    <field name="no_bl" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="jenis_bl" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="tgl_bl" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="no_doc_release" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="date_doc_release" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+
+					</group>
+			        <group>
+						<field name="document_state" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+				    	<field name="party" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="proforma" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="proforma_date" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="forwarder_name" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="id_ff_ppjk" attrs="{'readonly': [('state', 'not in', 'draft')]}" />
+						<field name="nm_cargoowner" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="npwpCargoOwner" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						<field name="id_platform" invisible="1"/>
+						<field name="no_cont" invisible="1"/>
+			        </group>
+				</group>
+				<notebook>
+						<page string="Containers" >
+							<field name="container_ids" attrs="{'readonly': [('state', 'not in', 'draft')]}"/>
+						</page>
+						<page string="Delivery Order" groups="djbc.group_djbc_do">
+							<group>
+								<group>
+									<field name="do_number" attrs="{'readonly': [('state', 'in', 'sent_do')]}"/>
+									<field name="do_date_number" attrs="{'readonly': [('state', 'in', 'sent_do')]}" />
+									<field name="request_date" readonly="1"/>
+									<field name="shipping_name" readonly="1"/>
+									<field name="status_do" attrs="{'readonly': [('state', 'in', 'sent_do')]}"/>
+								</group>
+								<group>
+
+									<field name="price_do" readonly="1"/>
+									<field name="paid_date_do" readonly="1"/>
+									<field name="sent_do_date" readonly="1"/>
+								</group>
+
+							</group>
+						</page>
+						<page string="SP2" groups="djbc.group_djbc_sp2">
+							<group>
+								<group>
+									<field name="request_date_sp2" readonly="1"/>
+									<field name="terminal" readonly="1"/>
+									<field name="status" attrs="{'readonly': [('state', 'in', 'sent_sp2')]}"/>
+									<field name="price" readonly="1"/>
+								</group>
+								<group>
+									<field name="is_finished" attrs="{'readonly': [('state', 'in', 'sent_sp2')]}"/>
+
+									<field name="paid_thrud_date" readonly="1"/>
+									<field name="sent_sp2_date" readonly="1"/>
+								</group>
+
+							</group>
+						</page>
+				</notebook>
+				<field name="keterangan"/>
+
+			</form>
+		</field>
+	</record>
+
+	<record id="djbc_docs_action" model="ir.actions.act_window">
+		<field name="name">DJBC Documents</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">djbc.docs</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+   		<!--field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				It's Empty
+			</p>
+		</field-->
+	</record>
+</odoo>

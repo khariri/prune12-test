@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="upload_doc_wizard_form" model="ir.ui.view">
+		<field name="name">Upload Doc Wizard Form</field>
+		<field name="model">upload.doc.wizard</field>
+		<field name="arch" type="xml">
+			<form>
+
+				<group>
+					<field name="kd_document_type"/>
+					<field name="file_data"/>
+				</group>
+				<footer>
+					
+					<button name='upload_doc' string='Upload Doc' type='object' class='btn-primary'/>
+					<button string='Cancel' class='btn-secondary' special='cancel'/>
+				</footer>
+			</form>
+		</field>
+	</record>
+
+	<record id="upload_doc_wizard_action" model="ir.actions.act_window">
+		<field name="name">Upload Doc</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">upload.doc.wizard</field>
+		<field name="view_mode">form</field>
+		<field name="view_id" ref='upload_doc_wizard_form'/>
+		<field name="target">new</field>
+	</record>
+</odoo>

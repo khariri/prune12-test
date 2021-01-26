@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="kite_masuk_bb_tree" model="ir.ui.view">
+        <field name="name">Laporan Pemasukan Bahan Baku</field>
+        <field name="model">djbc.kite.masuk.bb</field>
+        <field name="arch" type="xml">
+            <tree string="Laporan Pemasukan Bahan Baku">
+                <field name="jenis_dok"/>
+                <field name="no_dok"/>
+                <field name="tgl_dok"/>
+                <field name="no_seri"/>
+                <field name="no_penerimaan"/>
+                <field name="tgl_penerimaan"/>
+                <field name="kode_barang"/>
+                <field name="nama_barang"/>
+                <field name="jumlah"/>
+                <field name="satuan"/>
+                <field name="nilai"/>
+                <field name="currency"/>
+                <field name="warehouse"/>
+                <field name="penerima_subkon"/>
+                <field name="negara_asal"/>
+
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="kite_masuk_bb_form" model="ir.ui.view">
+        <field name="name">Laporan Pemasukan Bahan Baku</field>
+        <field name="model">djbc.kite.masuk.bb</field>
+        <field name="arch" type="xml">
+            <form>
+                <!--header>
+                    <button name='get_nopen' string='Refresh' type='object' class='btn-primary'/>
+
+                </header-->
+                <group>
+                    <group>
+                        <field name="jenis_dok"/>
+                        <field name="no_dok"/>
+                        <field name="tgl_dok"/>
+                        <field name="no_seri"/>
+                        <field name="no_penerimaan"/>
+                        <field name="tgl_penerimaan"/>
+                        <field name="kode_barang"/>
+                    </group>
+                    <group>
+                        <field name="nama_barang"/>
+                        <field name="jumlah"/>
+                        <field name="satuan"/>
+                        <field name="nilai"/>
+                        <field name="currency"/>
+                        <field name="warehouse"/>
+                        <field name="penerima_subkon"/>
+                        <field name="negara_asal"/>
+                    </group>
+                </group>
+                <!--notebook>
+                    <page string="Detail Pengeluaran">
+                        <field name="masuk_lines_ids">
+                            <tree string="Detail Pengeluaran">
+                                <field name="name"/>
+                                <field name="qty"/>
+                                <field name="no_dok"/>
+                                <field name="tgl_dok"/>
+                                <field name="jenis_dok"/>
+
+                            </tree>
+                        </field>
+                    </page>
+                </notebook-->
+            </form>
+        </field>
+    </record>
+
+    <record id="kite_masuk_bb_action_server" model="ir.actions.server">
+        <field name="name">Laporan Pemasukan Bahan Baku</field>
+        <field name="condition">True</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="djbc_kite_bb.model_djbc_kite_masuk_bb"/>
+        <field name="state">code</field>
+        <field name="code">action = model.call_djbc_kite_masuk_bb()</field>
+    </record>
+
+
+    <record id="kite_masuk_bb_action" model="ir.actions.act_window">
+        <field name="name">Laporan Pemasukan Bahan Baku</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">djbc.kite.masuk.bb</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

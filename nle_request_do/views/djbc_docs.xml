@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="djbc_docs_form" model="ir.ui.view">
+		<field name="name">DJBC Docs Request DO Form</field>
+		<field name="model">djbc.docs</field>
+		<field name="inherit_id" ref="djbc.djbc_docs_form"/>
+		<field name="arch" type="xml">
+			<field name="state" position="before">
+				<button string="Request DO" type="action"  name="%(request_do_wizard_action)d"
+						groups="djbc.group_djbc_request_do" states="draft" class="btn-primary"/>
+			</field>
+			<field name='no_dok' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='jenis_dok' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='tgl_dok' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='no_bl' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='tgl_bl' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='no_aju' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='tgl_aju' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='jenis_bl' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='no_cont' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='kd_document_type' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='npwpCargoOwner' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='nm_cargoowner' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='no_doc_release' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='date_doc_release' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='party' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='keterangan' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='container_ids' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='proforma' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='proforma_date' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='id_ff_ppjk' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='forwarder_name' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+			<field name='document_state' position="attributes">
+            	<attribute name="readonly">1</attribute>
+        	</field>
+		</field>
+	</record>
+
+	<record id="djbc_docs_form_no_readonly" model="ir.ui.view">
+		<field name="name">DJBC Docs Form</field>
+		<field name="model">djbc.docs</field>
+		<field name="inherit_id" ref="djbc.djbc_docs_form"/>
+		<field name="groups_id" eval="[(6, 0, [ref('djbc.group_djbc_request_do') ])]"/>
+		<field name="arch" type="xml">
+			<field name='no_dok' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='jenis_dok' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='tgl_dok' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='no_bl' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='tgl_bl' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='no_aju' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='tgl_aju' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='jenis_bl' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='no_cont' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='kd_document_type' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='npwpCargoOwner' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='nm_cargoowner' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='no_doc_release' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='date_doc_release' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='party' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='keterangan' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='container_ids' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='proforma' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='proforma_date' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='id_ff_ppjk' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='forwarder_name' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+			<field name='document_state' position="attributes">
+            	<attribute name="readonly">0</attribute>
+        	</field>
+		</field>
+	</record>
+
+
+</odoo>

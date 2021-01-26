@@ -1,0 +1,35 @@
+import requests
+import pprint
+
+payload ='{"kd_document_type":"1",' \
+         '"npwpCargoOwner":"1234567890",' \
+         '"nm_cargoowner":"PT. ABC ",' \
+         '"document_no":"555555",' \
+         '"document_date":"2020-08-07", ' \
+         '"no_doc_release":"123/SPPB/2020", ' \
+         '"date_doc_release":"2020-07-08", ' \
+         '"document_status":"SPPB", ' \
+         '"bl_no":"BL12345678", ' \
+         '"bl_date":"2020-08-07", ' \
+         '"id_platform": "PL000",' \
+         '"terminal": "Tanjung Priok Jakarta",' \
+         '"paid_thrud_date": "2020-07-19",' \
+         '"proforma": "Laporan Proforma",' \
+         '"proforma_date": "2020-07-20",' \
+         '"price": "8000000",' \
+         '"status": "Finish",' \
+         '"is_finished": 1,' \
+         '"party": 1,' \
+         '"container": [{"container_no": "BL001X",' \
+         '"container_size": "20",' \
+         '"container_type": "Box",' \
+         '"gate_pass": "https://sp2.platform.com/get_pass.pdf"}]' \
+         '}'
+
+headers = {'key': "071f44749c62852ac733c0763d11c5a1",
+           'content-type': "application/json"}
+
+r=requests.post("https://esbbcext01.beacukai.go.id:8090/document_sp2/final/", payload, headers=headers)
+
+print (r)
+# pprint.pprint (r.json())

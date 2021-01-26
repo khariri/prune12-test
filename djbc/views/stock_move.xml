@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="djbc.view_stock_move_picking_form" model="ir.ui.view">
+		<field name="name">djbc.stock_move</field>
+		<field name="model">stock.move</field>
+		<field name="inherit_id" ref="stock.view_move_picking_form"/>
+		<field name="arch" type="xml">
+			<field name="product_uom_qty" position="after">
+				<field name="jumlah_kemasan"/>
+				<field name="satuan_kemasan"/>
+			</field>
+		</field>
+	</record>
+	
+	<!--record id="djbc.view_stock_move_tree" model="ir.ui.view">
+		<field name="name">djbc.stock_move</field>
+		<field name="model">stock.move</field>
+		<field name="inherit_id" ref="stock.vpicktree"/>
+		<field name="arch" type="xml">
+			<field name="origin" position="after">
+				<field name="docs_id"/>
+			</field>
+		</field>
+	</record-->
+
+</odoo>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="djbc_hscode_tree" model="ir.ui.view">
+		<field name="name">DJBC HS Code Tree</field>
+		<field name="model">djbc.hscode</field>
+		<field name="arch" type="xml">
+			<tree string="DJBC HS Code">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record> 
+
+	<record id="djbc_hscode_action" model="ir.actions.act_window">
+		<field name="name">DJBC HS Code</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">djbc.hscode</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+   		<field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				It's Empty
+			</p>
+		</field>
+	</record>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+	<!--level 2 Laporan KITE-->
+	<menuitem id="djbc_laporan_kite_masuk_bb" name="Pemasukan Bahan Baku" parent="djbc.djbc_laporan"
+			  action="kite_masuk_bb_action" sequence="10"/>
+
+	<!--menuitem id="djbc_refresh_pemasukan" name="Refresh Pemasukan" parent="djbc_laporan"
+			  action="masuk_wizard_action" sequence="50"/>
+	<menuitem id="djbc_refresh_pengeluaran" name="Refresh Pengeluaran" parent="djbc_laporan"
+			  action="keluar_wizard_action" sequence="60"/-->
+
+	<!--menuitem name="Test " action="action_make_testing" id="menu_test"
+        	icon="STOCK_EXECUTE" parent="knowledge.menu_document_configuration"
+        	sequence="135" /-->
+
+</odoo>

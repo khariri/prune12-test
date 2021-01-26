@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="djbc_containers_tree" model="ir.ui.view">
+		<field name="name">DJBC Containers Tree</field>
+		<field name="model">djbc.containers</field>
+		<field name="arch" type="xml">
+			<tree string="Containers">
+				<field name="name"/>
+				<field name="container_size"/>
+				<field name="container_type"/>
+				<field name="gate_pass"/>
+			</tree>
+		</field>
+	</record> 
+
+	<record id="djbc_containers_form" model="ir.ui.view">
+		<field name="name">DJBC Containers Form</field>
+		<field name="model">djbc.containers</field>
+		<field name="arch" type="xml">
+			<form>
+			    <group>
+					<group>
+						<field name="name"/>
+						<field name="gate_pass"/>
+					</group>
+					<group>
+						<field name="container_size"/>
+						<field name="container_type"/>
+					</group>
+
+
+			    </group>	
+			</form>
+		</field>
+	</record>
+
+	<record id="djbc_docs_action" model="ir.actions.act_window">
+		<field name="name">DJBC Documents</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">djbc.docs</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+   		<!--field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				It's Empty
+			</p>
+		</field-->
+	</record>
+</odoo>

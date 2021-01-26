@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="djbc_doctype_tree" model="ir.ui.view">
+		<field name="name">DJBC Doc Type Tree</field>
+		<field name="model">djbc.doctype</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="code"/>
+				<field name="is_import_doc"/>	
+				
+			</tree>
+		</field>
+	</record>
+
+	<record id="djbc_doctype_form" model="ir.ui.view">
+		<field name="name">DJBC Doc Type Form</field>
+		<field name="model">djbc.doctype</field>
+		<field name="arch" type="xml">
+			<form>
+				<group>
+					<field name="code"/>
+					<field name="is_import_doc"/>
+				</group>
+
+			</form>
+		</field>
+	</record>
+
+	<record id="djbc_doctype_action" model="ir.actions.act_window">
+		<field name="name">DJBC Doc Type</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">djbc.doctype</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+   		<field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">
+				It's Empty
+			</p>
+		</field>
+	</record>
+</odoo>
